@@ -1,0 +1,115 @@
+body {
+    background: linear-gradient(120deg, gray, blue);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(184, 184, 184);
+}
+
+label {
+    font-weight: 600;
+    margin: 4px;
+}
+
+label, p {
+    color: #c2c2c2;
+}
+
+.principal {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+table, tr, th {
+    background: transparent !important;
+}
+
+tr {
+    border-bottom: 2px solid rgb(61, 23, 93);
+}
+
+thead, th {
+    color: silver !important;
+    background: #241d3394;
+}
+
+.information {
+
+    padding: 16px;
+    border-radius: 12px;
+    background: linear-gradient(240deg, rgb(110, 71, 202), transparent);
+    height: 50vh;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.information a {
+    width: 100%;
+    padding: 4px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.6), transparent);
+    color: aliceblue;
+
+}
+
+.square:nth-child(1) {
+    top: 10%;
+    left: 10%;
+}
+
+.square:nth-child(2) {
+    top: 30%;
+    left: 20%;
+}
+
+.square:nth-child(3) {
+    top: 50%;
+    left: 30%;
+}
+
+.square:nth-child(4) {
+    top: 70%;
+    left: 40%;
+}
+
+.square:nth-child(5) {
+    top: 90%;
+    left: 50%;
+}
+
+.square:nth-child(6) {
+    top: 10%;
+    left: 60%;
+}
+
+.square:nth-child(7) {
+    top: 30%;
+    left: 70%;
+}
+
+.square {
+    z-index: 0;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(84, 81, 85, 0.7);
+    opacity: 0;
+    animation: moveRight 2s linear infinite;
+    -webkit-animation: moveRight 2s linear infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(calc(100vw + 50px));
+    }
+}

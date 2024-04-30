@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block editIndex %}
+  <!-- seccion editar datos -->
+  <div class="container p-5 text-center d-flex  rounded justify-content-around w-75 ">
+    <div class="mt-3 information p-1">
+      <div class="col-12 p-3 ">
+        <h1>Editar Datos</h1>
+        <form action="/editar_persona/{{ informacion_persona[0] }}" method="post">
+          <div class="mb-1">
+            <label for="edit-nombre" class="form-label">Edita el Nombre</label>
+            <input value="{{ informacion_persona[1] }}" type="text" class="form-control" id="edit-nombre" name="edit-nombre" />
+          </div>
+          <div class="mb-1">
+            <label for="edit-apellido" class="form-label">Edita el Apellido</label>
+            <input value="{{ informacion_persona[2] }}" type="text" class="form-control" id="edit-apellido" name="edit-apellido" />
+          </div>
+          <div class="mb-1">
+            <label for="edit-telefono" class="form-label">Edita el Telefono</label>
+            <input value="{{ informacion_persona[3] }}" type="text" class="form-control" id="edit-telefono" name="edit-telefono" />
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+    </div>
+    <div class="mt-3  information p-1">
+      <div class="col-12 p-3">
+        <h1>Datos anteriores</h1>
+        <label for="">Nombre de la persona</label>
+        <h3>{{ informacion_persona[1] }}</h3>
+        <label for="">Apellido de la persona</label>
+        <h3>{{ informacion_persona[2] }}</h3>
+        <label for="">Telefono de la persona</label>
+        <h3>{{ informacion_persona[3] }}</h3>
+      </div>
+    </div>
+  </div>
+{% endblock %}

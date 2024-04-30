@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block index %}
+  <div class="container d-flex  justify-content-center align-items-center">
+    <section class="container d-flex justify-content-around">
+      <!-- Seccion crear datos -->
+      <div class="mt-5">
+        <div class="col-12">
+          <center>
+            <h2>Ingresar Nuevo Dato</h2>
+            <form action="/guardar_personas" method="post">
+              <div class="mb-3">
+                <label class="" for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" />
+              </div>
+              <div class="mb-3">
+                <label class="" for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" />
+              </div>
+              <div class="mb-3">
+                <label class="" for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" />
+              </div>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+          </center>
+        </div>
+      </div>
+    </section>
+    <section class="information d-flex flex-column justify-content-between">
+      <div>
+        <h1>CRUD con PostgresSQL</h1>
+        <p>
+          CRUD básico con manipulación de datos tipo <b>Character varying</b> y <b>interger</b> con <b>pgAdmin</b> y estilización con <b>Bootstrap.</b>
+        </p>
+      </div>
+
+      <a href="" class="text-center">Conoce mas proyectos como este. 😉</a>
+    </section>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="mt-5 text-center">Personas Registradas</h1>
+        <div class="table-responsive rounded">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for persona in personasRegistradas %}
+                <tr>
+                  <td>{{ persona[0] }}</td>
+                  <td>{{ persona[1] }}</td>
+                  <td>{{ persona[2] }}</td>
+                  <td>{{ persona[3] }}</td>
+                  <td class="d-flex">
+                    <a href="/editar_persona/{{ persona[0] }}" class="m-1 btn btn-warning me-2">Editar</a>
+                    <a href="/EliminarRegistro/{{ persona[0] }}" class="m-1 btn btn-danger" onclick="return confirm('Seguro desea Eliminar el Registro?')">Eliminar</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
